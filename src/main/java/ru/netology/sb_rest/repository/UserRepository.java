@@ -1,14 +1,19 @@
 package ru.netology.sb_rest.repository;
 
-import ru.netology.sb_rest.Authorities;
+import org.springframework.stereotype.Repository;
+import ru.netology.sb_rest.service.Authorities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
+@Repository
 public class UserRepository {
-   private static HashMap<String, String> usersPasswords = new HashMap<>();
+   private static ConcurrentHashMap<String, String> usersPasswords = new ConcurrentHashMap<>();
+
+   public UserRepository() {
+   }
 
    public List<Authorities> getUserAuthorities(String user, String password) {
       usersPasswords.put("Alex", "1234"); // test data
