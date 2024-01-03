@@ -23,6 +23,11 @@ public class AuthorizationController {
       return service.getAuthorities(user, password);
    }
 
+   @GetMapping
+   public String nginxTest() {
+      return "Hello from 8080 app!";
+   }
+
    //exception processing section ================
    @ExceptionHandler(InvalidCredentials.class)
    public ResponseEntity<String> icHandler(InvalidCredentials ic) {
