@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  sb_rest:
+    build: ./
+    image: 'sb_rest:1.0'
+    ports:
+      - '8080:8080'
